@@ -1,32 +1,42 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap = vim.keymap
+Keymap = vim.keymap
+
+-- Movement
+Keymap.set("n", "j", "<Left>", {noremap = true})
+Keymap.set("n", "l", "<Right>", {noremap = true})
+Keymap.set("n", "h", "<Up>", {noremap = true})
+Keymap.set("n", "k", "<Down>", {noremap = true})
+Keymap.set("v", "j", "<Left>", {noremap = true})
+Keymap.set("v", "l", "<Right>", {noremap = true})
+Keymap.set("v", "h", "<Up>", {noremap = true})
+Keymap.set("v", "k", "<Down>", {noremap = true})
 
 -- Directory Nav
-keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", {noremap = true})
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", {noremap = true})
+Keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", {noremap = true})
+Keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", {noremap = true})
 
 -- Tab nav
-keymap.set("n", "[t", ":tabprev<CR>", {noremap = true})
-keymap.set("n", "]t", ":tabnext<CR>", {noremap = true})
+Keymap.set("n", "[t", ":tabprev<CR>", {noremap = true})
+Keymap.set("n", "]t", ":tabnext<CR>", {noremap = true})
 
 -- Pane Nav
--- keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Left
--- keymap.set("n", "<C-i>", "<C-w>i", {noremap = true}) -- Split Vertical
--- keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Split Vertical
--- keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Split Vertical
+-- Keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Left
+-- Keymap.set("n", "<C-i>", "<C-w>i", {noremap = true}) -- Split Vertical
+-- Keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Split Vertical
+-- Keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Split Vertical
 
 -- Window Management
-keymap.set("n", "<leader>sv", ":vsplit<CR>", {noremap = true}) -- Split Vertical
-keymap.set("n", "<leader>sh", ":split<CR>", {noremap = true}) -- Split Horizonlally
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", {noremap = true}) -- Toggle Minimize
+Keymap.set("n", "<leader>sv", ":vsplit<CR>", {noremap = true}) -- Split Vertical
+Keymap.set("n", "<leader>sh", ":split<CR>", {noremap = true}) -- Split Horizonlally
+Keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", {noremap = true}) -- Toggle Minimize
 
 -- Comments     
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", {noremap = false})
 vim.api.nvim_set_keymap("v", "<C-_>", "gcc", {noremap = false})
 
 -- Indenting
-keymap.set("v", "<", "<gv", {noremap = false})
-keymap.set("v", ">", ">gv", {noremap = false})
+Keymap.set("v", "<", "<gv", {noremap = false})
+Keymap.set("v", ">", ">gv", {noremap = false})
 
