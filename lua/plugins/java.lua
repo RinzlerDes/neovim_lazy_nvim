@@ -32,6 +32,7 @@ return {
                     "--jvm-arg=-javaagent:" .. install_path .. "/lombok.jar",
                     "-data",
                     workspace_dir,
+                    '--add-modules=javafx.controls',
                 },
                 on_attach = on_attach,
                 capabilities = capabilities,

@@ -4,14 +4,14 @@ vim.g.maplocalleader = " "
 Keymap = vim.keymap
 
 -- Movement
-Keymap.set("n", "j", "<Left>", {noremap = true})
-Keymap.set("n", "l", "<Right>", {noremap = true})
-Keymap.set("n", "h", "<Up>", {noremap = true})
-Keymap.set("n", "k", "<Down>", {noremap = true})
-Keymap.set("v", "j", "<Left>", {noremap = true})
-Keymap.set("v", "l", "<Right>", {noremap = true})
-Keymap.set("v", "h", "<Up>", {noremap = true})
-Keymap.set("v", "k", "<Down>", {noremap = true})
+-- Keymap.set("n", "j", "<Left>", {noremap = true})
+-- Keymap.set("n", "l", "<Right>", {noremap = true})
+-- Keymap.set("n", "h", "<Up>", {noremap = true})
+-- Keymap.set("n", "k", "<Down>", {noremap = true})
+-- Keymap.set("v", "j", "<Left>", {noremap = true})
+-- Keymap.set("v", "l", "<Right>", {noremap = true})
+-- Keymap.set("v", "h", "<Up>", {noremap = true})
+-- Keymap.set("v", "k", "<Down>", {noremap = true})
 
 -- Directory Nav
 Keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", {noremap = true})
@@ -20,6 +20,10 @@ Keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", {noremap = true})
 -- Tab nav
 Keymap.set("n", "[t", ":tabprev<CR>", {noremap = true})
 Keymap.set("n", "]t", ":tabnext<CR>", {noremap = true})
+
+-- Buffer Nav
+Keymap.set("n", "<Tab>", ":bnext<CR>", {noremap = true})
+Keymap.set("n", "<S-Tab>", ":bprevious<CR>", {noremap = true})
 
 -- Pane Nav
 -- Keymap.set("n", "<C-h>", "<C-w>h", {noremap = true}) -- Left
