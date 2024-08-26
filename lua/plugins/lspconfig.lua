@@ -175,5 +175,11 @@ return {
                 },
             },
         })
+
+        -- configure c language server
+        lspconfig["yamlls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
     end,
 }

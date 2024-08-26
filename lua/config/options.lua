@@ -1,13 +1,13 @@
 local opt = vim.opt
 
-
 -- Tab / Indentation
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
 opt.smartindent = true
-opt.wrap = false
+opt.wrap = true
+
 
 -- Search
 opt.incsearch = true
@@ -18,7 +18,7 @@ opt.smartcase = true
 -- Appearence
 opt.number = true
 opt.termguicolors = true
-opt.colorcolumn = '100'
+--opt.colorcolumn = '100'
 opt.signcolumn = 'yes'
 opt.scrolloff = 10
 
