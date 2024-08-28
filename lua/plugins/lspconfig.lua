@@ -60,7 +60,8 @@ return {
         end
 
         -- used to enable autocompletion (assign to every lsp server config)
-        local capabilities = cmp_nvim_lsp.default_capabilities()
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
 
         -- Change the Diagnostic symbols in the sign column (gutter)
         -- (not in youtube nvim video)
@@ -88,28 +89,28 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure tailwindcss server
-        lspconfig["tailwindcss"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
+        -- -- configure tailwindcss server
+        -- lspconfig["tailwindcss"].setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        -- })
 
-        -- configure svelte server
-        lspconfig["svelte"].setup({
-            capabilities = capabilities,
-            on_attach = function(client, bufnr)
-                on_attach(client, bufnr)
-
-                vim.api.nvim_create_autocmd("BufWritePost", {
-                    pattern = { "*.js", "*.ts" },
-                    callback = function(ctx)
-                        if client.name == "svelte" then
-                            client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-                        end
-                    end,
-                })
-            end,
-        })
+        -- -- configure svelte server
+        -- lspconfig["svelte"].setup({
+        --     capabilities = capabilities,
+        --     on_attach = function(client, bufnr)
+        --         on_attach(client, bufnr)
+        --
+        --         vim.api.nvim_create_autocmd("BufWritePost", {
+        --             pattern = { "*.js", "*.ts" },
+        --             callback = function(ctx)
+        --                 if client.name == "svelte" then
+        --                     client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+        --                 end
+        --             end,
+        --         })
+        --     end,
+        -- })
 
         -- configure prisma orm server
         lspconfig["prismals"].setup({
@@ -128,7 +129,7 @@ return {
         lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+            filetypes = { "html", "javascript", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
 
         -- configure python server
