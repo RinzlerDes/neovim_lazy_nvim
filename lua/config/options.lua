@@ -1,9 +1,9 @@
 local opt = vim.opt
 
 -- Tab / Indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = true
@@ -31,3 +31,18 @@ opt.splitright = true
 opt.splitbelow = true
 opt.encoding = "UTF-8"
 
+-- Function to set tab width
+local function set_tab_width(tab_width)
+    vim.opt.tabstop = tab_width
+    vim.opt.shiftwidth = tab_width
+    vim.opt.softtabstop = tab_width
+    vim.opt.expandtab = true -- Convert tabs to spaces
+end
+
+-- Autocommand for specific filetypes
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+        set_tab_width(4) -- Set tab width to 2 for JavaScript files
+    end
+})
